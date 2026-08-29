@@ -1,4 +1,4 @@
-Member ID,Book ID,Checkout Date
+member_id,book_id,checkout_date
 1026,522,2025-07-11
 1049,520,2025-07-11
 1062,525,2025-07-05
