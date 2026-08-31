@@ -1,0 +1,91 @@
+ANSWER SQL QUESTIONS (text_report-version)
+==============================================
+
+QUESTION 1: HOW MUCH IS EACH MEMBER BORROWING?
+-------------------------------------------------------------------------------
+Business Objective
+
+Count the number of checkouts made by each registered member. Members who have not borrowed any books should also be included with a checkout count of zero.
+
+Result & Insight
+
+The query shows each member and the total number of books they have checked out. The results are ordered from the highest number of checkouts to the lowest.
+
+Technique Used
+
+A LEFT JOIN is used between the members and checkouts tables. This keeps all members in the result, including members who do not have any checkout records.
+
+Management Implication
+
+Members with zero checkouts can be identified as inactive members. The library could use this information to decide whether additional engagement or reading activities are needed.
+-------------------------------------------------------------------------------
+QUESTION 2: WHICH BOOKS MATCH A CHOSEN AUTHOR PATTERN?
+-------------------------------------------------------------------------------
+Business Objective
+
+Find books based on a specific pattern in the author's name. This allows the catalog to be searched using different author-name patterns.
+
+Result & Insight
+
+The query returns books whose author matches the selected pattern. For example, using s% finds authors whose names start with the letter "S". The results are sorted alphabetically by book title.
+
+Management Implication
+
+This type of search can help staff find books quickly when responding to patron requests. The same approach can also be combined with other filters if more specific searches are needed.
+-------------------------------------------------------------------------------
+QUESTION 3: WHAT ARE THE MOST POPULAR BOOKS?
+-------------------------------------------------------------------------------
+Business Objective
+
+Identify the five books with the highest number of checkouts.
+
+Result & Insight
+
+The query counts the checkouts for each book and returns the five books with the highest borrowing activity, ordered from most borrowed to least borrowed.
+
+Management Implication
+
+The results can help the library identify books that are in high demand. These titles may be considered when deciding which books need additional copies or continued promotion.
+-------------------------------------------------------------------------------
+QUESTION 4: WHO ARE THE MOST ACTIVE READERS?
+-------------------------------------------------------------------------------
+Business Objective
+
+Identify the ten members with the highest number of checkouts.
+
+Result & Insight
+
+The query calculates the total number of checkouts for each member and returns the top ten members, ordered by their borrowing activity.
+
+Management Implication
+
+The library can use this information to recognize highly active members and better understand which patrons are most engaged with the library's collection.
+
+-------------------------------------------------------------------------------
+QUESTION 5: WHAT DOES A NEIGHBORHOOD'S ACTIVITY LOOK LIKE FURTHER BACK IN TIME?
+-------------------------------------------------------------------------------
+Business Objective
+
+Examine the older checkout activity of a selected neighborhood, using "Shubra" as an example. The query skips the ten most recent checkouts and returns the older records.
+
+Result & Insight
+
+The results include checkout records from the selected neighborhood, ordered from newest to oldest, while excluding the ten most recent records. This makes it possible to focus on activity that occurred further back in time.
+
+Technique Used
+
+The LOWER() function is used when matching the neighborhood name. This allows values such as shubra, Shubra, and SHUBRA to be treated as the same value during the comparison.
+
+Management Implication
+
+Looking at older records can help determine whether borrowing activity in the neighborhood has been consistent over time or concentrated mainly in the recent period.
+
+-------------------------------------------------------------------------------
+RECOMMENDATIONS :-
+-------------------------------------------------------------------------------
+
+1. Member Activity: Identify members with high or zero checkout activity.
+2. Author Search: Find books using flexible author-name patterns.
+3. Book Popularity: Identify the most frequently borrowed books.
+4. eader Activity: Find the members with the highest borrowing activity.
+5. Neighborhood Trends: Examine older borrowing activity within a selected neighborhood.
